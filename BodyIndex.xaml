@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GorselOdev1.BodyIndex"
+             Title="BodyIndex">
+    <ScrollView>
+        <Grid
+            BackgroundColor="#0D0118"
+            RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto">
+
+
+            <Label Text="Boy Kütle İndeksi Hesaplama" Grid.Row="0"
+                   TextColor="White"
+                   Margin="0,0,0,20"
+                   HorizontalTextAlignment="Center"
+                   FontSize="30"
+            />
+
+            <Grid Grid.Row="1" Margin="10,10,10,0"
+                  HorizontalOptions="Center"
+                  RowDefinitions="Auto,Auto,Auto"
+                  ColumnDefinitions="Auto,Auto"
+                  ColumnSpacing="20">
+
+                <Label Text="Kilonuz(Kg)" Grid.Row="0" Grid.Column="0"
+                       TextColor="White"
+                       FontSize="16" VerticalTextAlignment="Center"/>
+
+                <Border Grid.Row="0"  Grid.Column="1"
+                        BackgroundColor="#311B45"
+                        HeightRequest="40"
+                        WidthRequest="200"
+                        Stroke="#6E557C"
+                        StrokeShape="RoundRectangle 20,20,20,20"
+                        StrokeThickness="2">
+
+                    <Entry Placeholder="Lütfen kilonuzu giriniz."
+                           PlaceholderColor="#AC9DB9"
+                           x:Name="KiloEntry"
+                           TextColor="White"
+                           Keyboard="Numeric"
+                           FontFamily="Epilogue"
+                           FontAttributes="None"
+                           VerticalOptions="Center"
+                           Margin="5,0,5,0"/>
+                </Border>
+            </Grid>
+
+            <Grid Grid.Row="2" Margin="10,10,10,30"
+                  HorizontalOptions="Center"
+                  RowDefinitions="Auto,Auto,Auto"
+                  ColumnDefinitions="Auto,Auto"
+                  ColumnSpacing="15">
+
+                <Label Text="Boyunuz(Cm)" Grid.Row="0" Grid.Column="0"
+                       TextColor="White"
+                       FontSize="16" VerticalTextAlignment="Center"/>
+
+                <Border Grid.Row="0"  Grid.Column="1"
+                        BackgroundColor="#311B45"
+                        HeightRequest="40"
+                        WidthRequest="200"
+                        Stroke="#6E557C"
+                        StrokeShape="RoundRectangle 20,20,20,20"
+                        StrokeThickness="2">
+
+                    <Entry Placeholder="Lütfen boyunuzu giriniz."
+                           PlaceholderColor="#AC9DB9"
+                           x:Name="BoyEntry"
+                           TextColor="White"
+                           Keyboard="Numeric"
+                           FontFamily="Epilogue"
+                           FontAttributes="None"
+                           VerticalOptions="Center"
+                           Margin="5,0,5,0"/>
+                </Border>
+            </Grid>
+
+            <Border Grid.Row="3" Margin="0,0,0,50"
+                    BackgroundColor="#311B45"
+                    HeightRequest="40"
+                    WidthRequest="350"
+                    Stroke="#6E557C"
+                    StrokeShape="RoundRectangle 20,20,20,20"
+                    StrokeThickness="2">
+
+                <Button Text="Hesapla" 
+                        TextColor="White"
+                        BackgroundColor="Transparent"
+                        FontSize="16" Margin="0,-6,0,0"
+                        Clicked="HesaplaBMI_Clicked"
+                />
+
+                <Border.Shadow>
+                    <Shadow
+                        Brush="#C283FD"
+                        Opacity=".7"
+                        Radius="20"
+                        Offset="0,0"/>
+                </Border.Shadow>
+
+            </Border>
+
+            
+
+                <Border Grid.Row="4"
+                        BackgroundColor="#311B45"
+                        HeightRequest="200"
+                        WidthRequest="200"
+                        Stroke="#6E557C"
+                        StrokeShape="RoundRectangle 20,20,20,20"
+                        StrokeThickness="2">
+
+                    <Grid RowDefinitions="*,*"
+                          RowSpacing="-20"
+                          HorizontalOptions="Center">
+                        <Label x:Name="txtBmi" 
+                               Text="" 
+                               TextColor="White"
+                               Grid.Row="0"
+                               Margin="0,50,0,0"
+                               FontSize="20"
+                               FontAttributes="None"/>
+
+                        <Label x:Name="txtDegree"
+                               Text=""
+                               TextColor="White"
+                               Grid.Row="1"
+                               FontSize="20"
+                             HorizontalOptions="Center"
+                               FontAttributes="None"/>
+
+                    </Grid>
+
+                    <Border.Shadow>
+                        <Shadow
+                            Brush="#C283FD"
+                            Opacity=".9"
+                            Radius="20"
+                            Offset="0,0"/>
+                    </Border.Shadow>
+
+                </Border>
+            
+
+        </Grid>
+
+    </ScrollView>
+</ContentPage>

@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GorselOdev1.ColorPicker"
+             Title="ColorPicker">
+    <ScrollView>
+        <Grid BackgroundColor="#0D0118"
+              RowDefinitions="Auto,Auto,Auto,Auto">
+
+            <Label Text="Renk Seçici" Grid.Row="0"
+                   TextColor="White"
+                   Margin="0,0,0,20"
+                   HorizontalTextAlignment="Center"
+                   FontSize="30"
+            />
+
+            <Border Grid.Row="1"
+                    BackgroundColor="#311B45"
+                    HeightRequest="200"
+                    WidthRequest="350"
+                    Stroke="#6E557C"
+                    StrokeShape="RoundRectangle 10,10,10,10"
+                    StrokeThickness="2"
+                    Margin="0,0,0,30">
+                
+                <Border
+                    BackgroundColor="#AC9DB9"
+                    HeightRequest="170"
+                    WidthRequest="320"
+                    Stroke="#6E557C"
+                    StrokeShape="RoundRectangle 10,10,10,10"
+                    StrokeThickness="2">
+
+                    <Grid
+                        RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto"
+                        Padding="10">
+
+                        <Label Text="Kırmızı Ton Ayarı:" Grid.Row="0" />
+                        <Slider x:Name="RedSlider" Maximum="255" ValueChanged="Slider_ValueChanged"  MinimumTrackColor="Red" Grid.Row="1"/>
+
+                        <Label Text="Mavi Ton Ayarı:" Grid.Row="2" />
+                        <Slider x:Name="BlueSlider" Maximum="255" ValueChanged="Slider_ValueChanged"  MinimumTrackColor="Blue" Grid.Row="3"/>
+
+                        <Label Text="Yeşil Ton Ayarı:" Grid.Row="4" />
+                        <Slider x:Name="GreenSlider" Maximum="255" ValueChanged="Slider_ValueChanged"  MinimumTrackColor="Green" Grid.Row="5"/>
+                    </Grid>
+
+                    <Border.Shadow>
+                        <Shadow
+                            Brush="White"
+                            Opacity=".4"
+                            Radius="20"
+                            Offset="0,0"/>
+                    </Border.Shadow>
+
+                </Border>
+
+                <Border.Shadow>
+                    <Shadow
+                        Brush="#C283FD"
+                        Opacity=".9"
+                        Radius="20"
+                        Offset="0,0"/>
+                </Border.Shadow>
+
+            </Border>
+
+            
+
+               <Grid Grid.Row="2">
+                   <Border x:Name="clrBackground"
+                           HeightRequest="200"
+                           WidthRequest="200"
+                           Stroke="#6E557C"
+                           StrokeShape="RoundRectangle 30,30,30,30"
+                           StrokeThickness="2"
+                           Margin="0,0,0,20">
+
+                    <Grid RowDefinitions="0.3*,0.6*,0.3*" >
+                        <Button
+                            Margin="0,3,5,0"
+                            FontFamily="Icons"
+                            TextColor="White"
+                            Text="&#xe801;"
+                            Grid.Row="0"
+                            FontSize="25"
+                            HorizontalOptions="End"
+                            BackgroundColor="Transparent"
+                            Clicked="Save_Clicked"/>
+
+
+                        <Button
+                            Margin="10,0,0,0"
+                            FontFamily="Icons"
+                            TextColor="White"
+                            Text="&#xe800;"
+                            Grid.Row="3"
+                            FontSize="25"
+                            HorizontalOptions="Start"
+                            BackgroundColor="Transparent"
+                            Clicked="Random_Clicked"/>
+
+                        
+
+
+                    </Grid>
+                       
+
+                       <Border.Shadow>
+                        <Shadow
+                            Brush="#C283FD"
+                            Opacity=".9"
+                            Radius="20"
+                            Offset="0,0"/>
+                    </Border.Shadow>
+
+                </Border>
+
+
+            </Grid>
+
+            <Label x:Name="txtHexCode"
+                Grid.Row="3"
+                TextColor="White"
+                HorizontalOptions="Center"
+                FontSize="17"/>
+
+                
+
+            
+        </Grid>
+    </ScrollView>
+</ContentPage>

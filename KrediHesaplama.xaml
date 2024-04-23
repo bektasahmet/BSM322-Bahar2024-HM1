@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GorselOdev1.KrediHesaplama"
+             Title="KrediHesaplama">
+<ScrollView>
+    <Grid BackgroundColor="#0D0118"
+          RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto">
+
+        <Label Text="Kredi Hesaplama" Grid.Row="0"
+               TextColor="White"
+               HorizontalTextAlignment="Center"
+               FontSize="30"
+               />
+
+        <Border Grid.Row="1" Margin="30"
+            BackgroundColor="#311B45"
+            HeightRequest="70"
+            WidthRequest="300"
+            Stroke="#6E557C"
+            StrokeShape="RoundRectangle 20,20,20,20"
+            StrokeThickness="2">
+                <Picker x:Name="Picker"  Title="Kredi Türünü seçin" Margin="10,10,10,0">
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>İhtiyaç Kredisi</x:String>
+                            <x:String>Konut Kredisi</x:String>
+                            <x:String>Taşıt Kredisi</x:String>
+                            <x:String>Ticari Kredi</x:String>
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+            <Border.Shadow>
+                <Shadow
+                    Brush="#C283FD"
+                    Opacity=".7"
+                    Radius="20"
+                    Offset="0,0"/>
+            </Border.Shadow>
+            </Border>
+
+        <Grid Grid.Row="2" Margin="10,10,10,0"
+              HorizontalOptions="Center"
+              RowDefinitions="Auto,Auto,Auto"
+              ColumnDefinitions="Auto,Auto"
+              ColumnSpacing="10">
+
+                <Label Text="Kredi Tutarı(₺)" Grid.Row="0" Grid.Column="0"
+                       TextColor="White"
+                       FontSize="16" VerticalTextAlignment="Center"/>
+
+                <Border Grid.Row="0"  Grid.Column="1"
+                        BackgroundColor="#311B45"
+                        HeightRequest="40"
+                        WidthRequest="250"
+                        Stroke="#6E557C"
+                        StrokeShape="RoundRectangle 20,20,20,20"
+                        StrokeThickness="2">
+
+                    <Entry Placeholder="Lütfen kredi tutarını giriniz."
+                           PlaceholderColor="#AC9DB9"
+                           x:Name="KrediTutarEntry"
+                           TextColor="White"
+                           Keyboard="Numeric"
+                           FontFamily="Epilogue"
+                           FontAttributes="None"
+                           VerticalOptions="Center"
+                           Margin="5,0,5,0"/>
+                    
+                    
+                </Border>
+
+            </Grid>
+
+        <Grid Grid.Row="3" Margin="10,10,10,0"
+              HorizontalOptions="Center"
+              RowDefinitions="Auto,Auto,Auto"
+              ColumnDefinitions="Auto,Auto"
+              ColumnSpacing="10">
+
+            <Label Text="Faiz Tutarı(%)" Grid.Row="0" Grid.Column="0"
+                   TextColor="White"
+                   FontSize="16" VerticalTextAlignment="Center"/>
+
+            <Border Grid.Row="0"  Grid.Column="1"
+                    BackgroundColor="#311B45"
+                    HeightRequest="40"
+                    WidthRequest="250"
+                    Stroke="#6E557C"
+                    StrokeShape="RoundRectangle 20,20,20,20"
+                    StrokeThickness="2">
+
+                <Entry Placeholder="Lütfen faiz oranını giriniz."
+                       PlaceholderColor="#AC9DB9"
+                       x:Name="FaizOranEntry"
+                       Keyboard="Numeric"
+                       TextColor="White"
+                       FontFamily="Epilogue"
+                       FontAttributes="None"
+                       VerticalOptions="Center"
+                       Margin="5,0,5,0"/>
+
+
+            </Border>
+
+        </Grid>
+
+        <Grid Grid.Row="4" Margin="10,10,10,40"
+              HorizontalOptions="Center"
+              RowDefinitions="Auto,Auto,Auto"
+              ColumnDefinitions="Auto,Auto"
+              ColumnSpacing="40">
+
+            <Label Text="Vade(Ay)" Grid.Row="0" Grid.Column="0"
+                   TextColor="White"
+                   FontSize="16" VerticalTextAlignment="Center"/>
+
+            <Border Grid.Row="0"  Grid.Column="1"
+                    BackgroundColor="#311B45"
+                    HeightRequest="40"
+                    WidthRequest="250"
+                    Stroke="#6E557C"
+                    StrokeShape="RoundRectangle 20,20,20,20"
+                    StrokeThickness="2">
+
+                <Entry Placeholder="Lütfen vadeyi giriniz."
+                       PlaceholderColor="#AC9DB9"
+                       x:Name="VadeEntry"
+                       Keyboard="Numeric"
+                       TextColor="White"
+                       FontFamily="Epilogue"
+                       FontAttributes="None"
+                       VerticalOptions="Center"
+                       Margin="5,0,5,0"/>
+
+            </Border>
+
+        </Grid>
+
+
+        <Grid Grid.Row="5" Margin="10,10,10,0"
+              HorizontalOptions="Center"
+              RowDefinitions="Auto,Auto,Auto"
+              ColumnDefinitions="Auto,Auto"
+              ColumnSpacing="50">
+
+            <Label Text="Aylık Taksit" Grid.Row="0" Grid.Column="0"
+                   TextColor="White"
+                   FontSize="16" VerticalTextAlignment="Center"/>
+
+            <Label x:Name="TaksitSonucLabel"  Grid.Row="0" Grid.Column="1" TextColor="White" VerticalTextAlignment="Center" Margin="10,-20,0,0" FontSize="16"/>
+
+                <Border Grid.Row="0"  Grid.Column="1"
+                    BackgroundColor="#311B45"
+                    HeightRequest="3"
+                    WidthRequest="150"
+                    Stroke="#6E557C"
+                    StrokeShape="RoundRectangle 20,20,20,20"
+                    StrokeThickness="2">
+                </Border>
+
+        </Grid>
+
+        <Grid Grid.Row="6" Margin="10,10,10,0"
+              HorizontalOptions="Center"
+              RowDefinitions="Auto,Auto,Auto"
+              ColumnDefinitions="Auto,Auto"
+              ColumnSpacing="20">
+
+            <Label Text="Toplam Ödeme" Grid.Row="0" Grid.Column="0"
+                   TextColor="White"
+                   FontSize="16" VerticalTextAlignment="Center"/>
+
+            <Label x:Name="ToplamOdemeSonucLabel"  Grid.Row="0" Grid.Column="1" TextColor="White" VerticalTextAlignment="Center" Margin="10,-20,0,0" FontSize="16"/>
+
+            <Border Grid.Row="0"  Grid.Column="1"
+                    BackgroundColor="#311B45"
+                    HeightRequest="3"
+                    WidthRequest="150"
+                    Stroke="#6E557C"
+                    StrokeShape="RoundRectangle 20,20,20,20"
+                    StrokeThickness="2">
+            </Border>
+
+        </Grid>
+
+        <Grid Grid.Row="7" Margin="10,10,10,40"
+              HorizontalOptions="Center"
+              RowDefinitions="Auto,Auto,Auto"
+              ColumnDefinitions="Auto,Auto"
+              ColumnSpacing="40">
+
+            <Label Text="Toplam Faiz" Grid.Row="0" Grid.Column="0"
+                   TextColor="White"
+                   FontSize="16" VerticalTextAlignment="Center"/>
+
+            <Label x:Name="ToplamFaizSonucLabel"  Grid.Row="0" Grid.Column="1" TextColor="White" VerticalTextAlignment="Center" Margin="10,-20,0,0" FontSize="16"/>
+
+            <Border Grid.Row="0"  Grid.Column="1"
+                    BackgroundColor="#311B45"
+                    HeightRequest="3"
+                    WidthRequest="150"
+                    Stroke="#6E557C"
+                    StrokeShape="RoundRectangle 20,20,20,20"
+                    StrokeThickness="2">
+            </Border>
+
+        </Grid>
+
+
+            <Border Grid.Row="8" Margin="0,0,0,30"
+                BackgroundColor="#311B45"
+                HeightRequest="40"
+                WidthRequest="350"
+                Stroke="#6E557C"
+                StrokeShape="RoundRectangle 20,20,20,20"
+                StrokeThickness="2">
+
+            <Button Text="Hesapla" 
+                    TextColor="White"
+                    BackgroundColor="Transparent"
+                    FontSize="16" Margin="0,-6,0,0"
+                    Clicked="Hesapla_Clicked"
+                    />
+
+            <Border.Shadow>
+                <Shadow
+                    Brush="#C283FD"
+                    Opacity=".7"
+                    Radius="20"
+                    Offset="0,0"/>
+            </Border.Shadow>
+
+        </Border>
+
+
+        </Grid>
+</ScrollView>
+</ContentPage>

@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GorselOdev1.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,40"
+            Spacing="25"
+            BackgroundColor="#0D0118">
+
+            <Border
+                BackgroundColor="#311B45"
+                HeightRequest="200"
+                WidthRequest="200"
+                Stroke="#6E557C"
+                StrokeShape="RoundRectangle 30,30,30,30"
+                StrokeThickness="2">
+                <Image Aspect="AspectFill" Source="pp.jpeg"/>
+                <Border.Shadow>
+                    <Shadow
+                        Brush="#C283FD"
+                        Opacity=".7"
+                        Radius="50"
+                        Offset="0,0"/>
+                </Border.Shadow>
+            </Border>
+
+            <Label
+                Text="Ahmet Bektaş"
+                HorizontalOptions="Center"
+                FontSize="20"
+                TextColor="White"/>
+
+            <Label
+                Text="Bartın Üniversitesi Bilgisayar Mühendisliği"
+                HorizontalOptions="Center"
+                HorizontalTextAlignment="Center"
+                FontSize="20"
+                TextColor="White"/>
+
+
+            <Label
+                Text="ÖDEV-1"
+                HorizontalTextAlignment="Center"
+                FontSize="20"
+                TextColor="White"/>
+
+
+            
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="GorselOdev1.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:GorselOdev1"
+    Shell.FlyoutBehavior="Flyout"
+    Title="GorselOdev1"
+    Shell.TitleColor="#0D0118">
+
+    
+
+    <ShellContent
+        Title="Ana Sayfa"
+        ContentTemplate="{DataTemplate local:MainPage}"
+        Route="MainPage"/>
+
+    <ShellContent
+        Title="Kredi Hesaplama"
+        ContentTemplate="{DataTemplate local:KrediHesaplama}"
+        Icon="charts_colors_line.png"
+        Route="KrediHesaplama"/>
+
+    <ShellContent
+        Title="Vücut Kitle İndeksi Hesaplama"
+        ContentTemplate="{DataTemplate local:BodyIndex}"
+        Icon="weight.png"
+        Route="BodyIndex"/>
+
+    <ShellContent
+        Title="Renk Seçici"
+        ContentTemplate="{DataTemplate local:ColorPicker}"
+        Icon="colors.png"
+        Route="ColorPicker"/>
+
+    <ShellContent
+        Title="Yapılacaklar Listesi"
+        ContentTemplate="{DataTemplate local:ToDoList}"
+        Icon="list_bullets.png"
+        Route="ToDoList"/>
+
+</Shell>
